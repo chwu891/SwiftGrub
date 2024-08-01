@@ -13,17 +13,19 @@ struct LocationDetailView: View {
                    GridItem(.flexible()),
                    GridItem(.flexible())]
     
+    var location: DDGLocation
+    
     var body: some View {
         VStack(spacing: 16) {
             BannerImageView(imageName: "default-banner-asset")
             
             HStack {
-                AddressView(address: "123 Main Street")
+                AddressView(address: location.address)
                 Spacer()
             }
             .padding(.horizontal)
             
-            DescriptionView(text: "This is a test description. This is a test description. This is a test description. This is a test description. This is a test description.")
+            DescriptionView(text: location.description)
             
             ZStack {
                 Capsule()
@@ -32,19 +34,24 @@ struct LocationDetailView: View {
                 
                 HStack(spacing: 20) {
                     Button {
+                        
                     } label: {
-                        LocationActionButton(color: Color.theme.brandPrimary, imageName: "location.fill")
+                        LocationActionButton(color: .brandPrimary, imageName: "location.fill")
                     }
-                    Link(destination: URL(string: "https://www.apple.com")!, label: {
-                        LocationActionButton(color: Color.theme.brandPrimary, imageName: "network")
+                    
+                    Link(destination: URL(string: location.websiteURL)!, label: {
+                        LocationActionButton(color: .brandPrimary, imageName: "network")
                     })
+                    
                     Button {
+                        
                     } label: {
-                        LocationActionButton(color: Color.theme.brandPrimary, imageName: "phone.fill")
+                        LocationActionButton(color: .brandPrimary, imageName: "phone.fill")
                     }
                     Button {
+                        
                     } label: {
-                        LocationActionButton(color: Color.theme.brandPrimary, imageName: "person.fill.checkmark")
+                        LocationActionButton(color: .brandPrimary, imageName: "person.fill.checkmark")
                     }
                 }
             }
@@ -65,17 +72,16 @@ struct LocationDetailView: View {
                     FirstNameAvatarView(firstName: "Sean")
                 })
             }
-            
             Spacer()
         }
-        .navigationTitle("Location Name")
+        .navigationTitle(location.name)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
     NavigationView {
-        LocationDetailView()
+        LocationDetailView(location: DDGLocation(record: MockData.location))
     }
 }
 
