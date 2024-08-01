@@ -26,6 +26,7 @@
 		19935A9B2C5C2847003D9543 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935A9A2C5C2847003D9543 /* OnboardView.swift */; };
 		19935A9D2C5C2B73003D9543 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935A9C2C5C2B73003D9543 /* LogoView.swift */; };
 		19935AA02C5C2D96003D9543 /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935A9F2C5C2D96003D9543 /* XDismissButton.swift */; };
+		19935AA42C5C549B003D9543 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AA32C5C549B003D9543 /* PhotoPicker.swift */; };
 		19F94C052C58ABA400599F54 /* SwiftGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */; };
 		19F94C092C58ABA500599F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C082C58ABA500599F54 /* Assets.xcassets */; };
 		19F94C0C2C58ABA500599F54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C0B2C58ABA500599F54 /* Preview Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		19935A9A2C5C2847003D9543 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		19935A9C2C5C2B73003D9543 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		19935A9F2C5C2D96003D9543 /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
+		19935AA32C5C549B003D9543 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		19F94C012C58ABA400599F54 /* SwiftGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGrubApp.swift; sourceTree = "<group>"; };
 		19F94C082C58ABA500599F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 		19935A732C58E459003D9543 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				19935AA22C5C5472003D9543 /* UIKit Components */,
 				19935A9E2C5C2D83003D9543 /* Buttons */,
 				19935A742C58E482003D9543 /* AvatarView.swift */,
 				19935A9C2C5C2B73003D9543 /* LogoView.swift */,
@@ -101,10 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				19935A912C5B42A3003D9543 /* LocationMapView */,
+				19935AA12C5C52F8003D9543 /* ProfileView */,
 				19F94C142C58ABC500599F54 /* AppTabView.swift */,
 				19935A712C58CC4A003D9543 /* LocationDetailView.swift */,
 				19F94C1B2C58AC3F00599F54 /* LocationListView.swift */,
-				19F94C1D2C58AC5600599F54 /* ProfileView.swift */,
 				19935A9A2C5C2847003D9543 /* OnboardView.swift */,
 			);
 			path = Screens;
@@ -156,6 +159,22 @@
 				19935A9F2C5C2D96003D9543 /* XDismissButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		19935AA12C5C52F8003D9543 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				19F94C1D2C58AC5600599F54 /* ProfileView.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		19935AA22C5C5472003D9543 /* UIKit Components */ = {
+			isa = PBXGroup;
+			children = (
+				19935AA32C5C549B003D9543 /* PhotoPicker.swift */,
+			);
+			path = "UIKit Components";
 			sourceTree = "<group>";
 		};
 		19F94BF82C58ABA400599F54 = {
@@ -298,6 +317,7 @@
 				19935A722C58CC4A003D9543 /* LocationDetailView.swift in Sources */,
 				19935A852C5B0B5C003D9543 /* DDGProfile.swift in Sources */,
 				19935A832C5B0827003D9543 /* DDGLocation.swift in Sources */,
+				19935AA42C5C549B003D9543 /* PhotoPicker.swift in Sources */,
 				19F94C1A2C58AC0C00599F54 /* LocationMapView.swift in Sources */,
 				19935A752C58E482003D9543 /* AvatarView.swift in Sources */,
 				19935A8A2C5B1942003D9543 /* CloudKitManager.swift in Sources */,
