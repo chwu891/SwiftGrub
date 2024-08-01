@@ -16,6 +16,9 @@
 		19935A832C5B0827003D9543 /* DDGLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935A822C5B0827003D9543 /* DDGLocation.swift */; };
 		19935A852C5B0B5C003D9543 /* DDGProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935A842C5B0B5C003D9543 /* DDGProfile.swift */; };
 		19935A872C5B0B7C003D9543 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935A862C5B0B7C003D9543 /* MockData.swift */; };
+		19935A8A2C5B1942003D9543 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935A892C5B1942003D9543 /* CloudKitManager.swift */; };
+		19935A8C2C5B1A97003D9543 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935A8B2C5B1A97003D9543 /* Constants.swift */; };
+		19935A8E2C5B20C8003D9543 /* CKRecord+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935A8D2C5B20C8003D9543 /* CKRecord+Ext.swift */; };
 		19F94C052C58ABA400599F54 /* SwiftGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */; };
 		19F94C092C58ABA500599F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C082C58ABA500599F54 /* Assets.xcassets */; };
 		19F94C0C2C58ABA500599F54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C0B2C58ABA500599F54 /* Preview Assets.xcassets */; };
@@ -37,6 +40,9 @@
 		19935A822C5B0827003D9543 /* DDGLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGLocation.swift; sourceTree = "<group>"; };
 		19935A842C5B0B5C003D9543 /* DDGProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGProfile.swift; sourceTree = "<group>"; };
 		19935A862C5B0B7C003D9543 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		19935A892C5B1942003D9543 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		19935A8B2C5B1A97003D9543 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		19935A8D2C5B20C8003D9543 /* CKRecord+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKRecord+Ext.swift"; sourceTree = "<group>"; };
 		19F94C012C58ABA400599F54 /* SwiftGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGrubApp.swift; sourceTree = "<group>"; };
 		19F94C082C58ABA500599F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +104,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		19935A882C5B1906003D9543 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				19F94C1F2C58AD3400599F54 /* Extensions */,
+				19935A892C5B1942003D9543 /* CloudKitManager.swift */,
+				19935A8B2C5B1A97003D9543 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		19F94BF82C58ABA400599F54 = {
 			isa = PBXGroup;
 			children = (
@@ -117,7 +133,7 @@
 		19F94C032C58ABA400599F54 /* SwiftGrub */ = {
 			isa = PBXGroup;
 			children = (
-				19F94C1F2C58AD3400599F54 /* Extensions */,
+				19935A882C5B1906003D9543 /* Utilities */,
 				19935A812C5B0817003D9543 /* Models */,
 				19F94C122C58ABB400599F54 /* Views */,
 				19935A802C5AF671003D9543 /* SwiftGrub.entitlements */,
@@ -152,6 +168,7 @@
 			children = (
 				19F94C202C58AD4700599F54 /* Color+Ext.swift */,
 				19935A7C2C58EF84003D9543 /* View+Ext.swift */,
+				19935A8D2C5B20C8003D9543 /* CKRecord+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -227,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F94C152C58ABC500599F54 /* AppTabView.swift in Sources */,
+				19935A8C2C5B1A97003D9543 /* Constants.swift in Sources */,
 				19935A7B2C58EEBA003D9543 /* CustomModifiers.swift in Sources */,
 				19F94C1C2C58AC3F00599F54 /* LocationListView.swift in Sources */,
 				19F94C212C58AD4700599F54 /* Color+Ext.swift in Sources */,
@@ -236,8 +254,10 @@
 				19935A832C5B0827003D9543 /* DDGLocation.swift in Sources */,
 				19F94C1A2C58AC0C00599F54 /* LocationMapView.swift in Sources */,
 				19935A752C58E482003D9543 /* AvatarView.swift in Sources */,
+				19935A8A2C5B1942003D9543 /* CloudKitManager.swift in Sources */,
 				19935A7D2C58EF84003D9543 /* View+Ext.swift in Sources */,
 				19935A782C58E4A2003D9543 /* LocationCell.swift in Sources */,
+				19935A8E2C5B20C8003D9543 /* CKRecord+Ext.swift in Sources */,
 				19935A7F2C58F0BB003D9543 /* DDGButton.swift in Sources */,
 				19F94C1E2C58AC5600599F54 /* ProfileView.swift in Sources */,
 				19F94C052C58ABA400599F54 /* SwiftGrubApp.swift in Sources */,
