@@ -65,6 +65,17 @@ final class CloudKitManager {
         CKContainer(identifier: "iCloud.com.chi-apple.DubDubGrub").publicCloudDatabase.add(operation)
     }
     
+    func save(record: CKRecord, completed: @escaping (Result<CKRecord, Error>) -> Void) {
+        CKContainer(identifier: "iCloud.com.chi-apple.DubDubGrub").publicCloudDatabase.save(record) { record, error in
+            guard let record = record, error == nil else {
+                completed(.failure(error!))
+                return
+            }
+            
+            completed(.success(record))
+        }
+    }
+    
     func fetchRecord(with id: CKRecord.ID, completed: @escaping (Result<CKRecord, Error>) -> Void) {
         
         CKContainer(identifier: "iCloud.com.chi-apple.DubDubGrub").publicCloudDatabase.fetch(withRecordID: id) { record, error in
