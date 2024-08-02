@@ -28,6 +28,7 @@
 		19935AA02C5C2D96003D9543 /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935A9F2C5C2D96003D9543 /* XDismissButton.swift */; };
 		19935AA42C5C549B003D9543 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AA32C5C549B003D9543 /* PhotoPicker.swift */; };
 		19935AA62C5C6BAB003D9543 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AA52C5C6BAB003D9543 /* UIImage+Ext.swift */; };
+		19935AA92C5C8D89003D9543 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AA82C5C8D89003D9543 /* ProfileViewModel.swift */; };
 		19F94C052C58ABA400599F54 /* SwiftGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */; };
 		19F94C092C58ABA500599F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C082C58ABA500599F54 /* Assets.xcassets */; };
 		19F94C0C2C58ABA500599F54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C0B2C58ABA500599F54 /* Preview Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		19935A9F2C5C2D96003D9543 /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
 		19935AA32C5C549B003D9543 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		19935AA52C5C6BAB003D9543 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		19935AA82C5C8D89003D9543 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		19F94C012C58ABA400599F54 /* SwiftGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGrubApp.swift; sourceTree = "<group>"; };
 		19F94C082C58ABA500599F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				19F94C1D2C58AC5600599F54 /* ProfileView.swift */,
+				19935AA82C5C8D89003D9543 /* ProfileViewModel.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				19F94C1C2C58AC3F00599F54 /* LocationListView.swift in Sources */,
 				19935A932C5B42BC003D9543 /* LocationMapViewModel.swift in Sources */,
 				19F94C212C58AD4700599F54 /* Color+Ext.swift in Sources */,
+				19935AA92C5C8D89003D9543 /* ProfileViewModel.swift in Sources */,
 				19935A872C5B0B7C003D9543 /* MockData.swift in Sources */,
 				19935A722C58CC4A003D9543 /* LocationDetailView.swift in Sources */,
 				19935A852C5B0B5C003D9543 /* DDGProfile.swift in Sources */,
