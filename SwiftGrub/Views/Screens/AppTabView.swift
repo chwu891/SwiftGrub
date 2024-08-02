@@ -25,10 +25,14 @@ struct AppTabView: View {
                 Label("Profile", systemImage: "person")
             }
         }
+        .onAppear{
+            CloudKitManager.shared.getUserReocrd()
+        }
         .accentColor(Color.theme.brandPrimary)
     }
 }
 
 #Preview {
     AppTabView()
+        .environmentObject(LocationManager())
 }
