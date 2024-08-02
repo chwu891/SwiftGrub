@@ -59,7 +59,7 @@ struct ProfileView: View {
             Spacer()
             
             Button {
-                createProfile()
+//                createProfile()
             } label: {
                 DDGButton(title: "Create Profile")
             }
@@ -73,6 +73,7 @@ struct ProfileView: View {
                 Image(systemName: "keyboard.chevron.compact.down")
             }
         }
+        .onAppear { getProfile() }
         .alert(item: $alertItem, content: { alertItem in
             Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
         })
@@ -107,14 +108,14 @@ struct ProfileView: View {
         profileRecord[DDGProfile.kAvatar] = avatar.convertToCKAsset()
         
         // Get our UserRecordID from the Container
-        CKContainer.default().fetchUserRecordID { recordID, error in
+        CKContainer(identifier: "iCloud.com.chi-apple.DubDubGrub").fetchUserRecordID { recordID, error in
             guard let recordID = recordID, error == nil else {
                 print(error!.localizedDescription)
                 return
             }
             
             // Get UserRecord from the Public Database
-            CKContainer.default().publicCloudDatabase.fetch(withRecordID: recordID) { userRecord, error in
+            CKContainer(identifier: "iCloud.com.chi-apple.DubDubGrub").publicCloudDatabase.fetch(withRecordID: recordID) { userRecord, error in
                 guard let userRecord = userRecord, error == nil else {
                     print(error!.localizedDescription)
                     return
@@ -135,7 +136,42 @@ struct ProfileView: View {
                     print(savedRecords)
                 }
                 
-                CKContainer.default().publicCloudDatabase.add(operation)
+                CKContainer(identifier: "iCloud.com.chi-apple.DubDubGrub").publicCloudDatabase.add(operation)
+            }
+        }
+    }
+    
+    func getProfile() {
+        CKContainer(identifier: "iCloud.com.chi-apple.DubDubGrub").fetchUserRecordID { recordID, error in
+            guard let recordID = recordID, error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            
+            CKContainer(identifier: "iCloud.com.chi-apple.DubDubGrub").publicCloudDatabase.fetch(withRecordID: recordID) { userRecord, error in
+                guard let userRecord = userRecord, error == nil else {
+                    print(error!.localizedDescription)
+                    return
+                }
+                
+                let profileReference = userRecord["userProfile"] as! CKRecord.Reference
+                let profileRecordID = profileReference.recordID
+                
+                CKContainer(identifier: "iCloud.com.chi-apple.DubDubGrub").publicCloudDatabase.fetch(withRecordID: profileRecordID) { profileRecord, error in
+                    guard let profileRecord = profileRecord, error == nil else {
+                        print(error!.localizedDescription)
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        let profile = DDGProfile(record: profileRecord)
+                        firstName   = profile.firstName
+                        lastName    = profile.lastName
+                        companyName = profile.companyName
+                        bio         = profile.bio
+                        avatar      = profile.createAvatarImage()
+                    }
+                }
             }
         }
     }
