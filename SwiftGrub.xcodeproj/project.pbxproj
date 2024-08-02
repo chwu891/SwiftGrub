@@ -31,6 +31,7 @@
 		19935AA92C5C8D89003D9543 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AA82C5C8D89003D9543 /* ProfileViewModel.swift */; };
 		19935AAB2C5CD94B003D9543 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AAA2C5CD94B003D9543 /* LoadingView.swift */; };
 		19935AAE2C5D7D55003D9543 /* LocationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AAD2C5D7D55003D9543 /* LocationDetailViewModel.swift */; };
+		19935AB02C5D8A1A003D9543 /* ProfileModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AAF2C5D8A1A003D9543 /* ProfileModalView.swift */; };
 		19F94C052C58ABA400599F54 /* SwiftGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */; };
 		19F94C092C58ABA500599F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C082C58ABA500599F54 /* Assets.xcassets */; };
 		19F94C0C2C58ABA500599F54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C0B2C58ABA500599F54 /* Preview Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		19935AA82C5C8D89003D9543 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		19935AAA2C5CD94B003D9543 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		19935AAD2C5D7D55003D9543 /* LocationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewModel.swift; sourceTree = "<group>"; };
+		19935AAF2C5D8A1A003D9543 /* ProfileModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModalView.swift; sourceTree = "<group>"; };
 		19F94C012C58ABA400599F54 /* SwiftGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGrubApp.swift; sourceTree = "<group>"; };
 		19F94C082C58ABA500599F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			children = (
 				19935A712C58CC4A003D9543 /* LocationDetailView.swift */,
 				19935AAD2C5D7D55003D9543 /* LocationDetailViewModel.swift */,
+				19935AAF2C5D8A1A003D9543 /* ProfileModalView.swift */,
 			);
 			path = LocationDetailView;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				19935A902C5B3D54003D9543 /* AlertItem.swift in Sources */,
 				19935A7D2C58EF84003D9543 /* View+Ext.swift in Sources */,
 				19935A782C58E4A2003D9543 /* LocationCell.swift in Sources */,
+				19935AB02C5D8A1A003D9543 /* ProfileModalView.swift in Sources */,
 				19935A8E2C5B20C8003D9543 /* CKRecord+Ext.swift in Sources */,
 				19935A962C5BF99A003D9543 /* LocationManager.swift in Sources */,
 				19935A982C5C0137003D9543 /* CKAsset+Ext.swift in Sources */,
