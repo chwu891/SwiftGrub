@@ -30,6 +30,7 @@
 		19935AA62C5C6BAB003D9543 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AA52C5C6BAB003D9543 /* UIImage+Ext.swift */; };
 		19935AA92C5C8D89003D9543 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AA82C5C8D89003D9543 /* ProfileViewModel.swift */; };
 		19935AAB2C5CD94B003D9543 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AAA2C5CD94B003D9543 /* LoadingView.swift */; };
+		19935AAE2C5D7D55003D9543 /* LocationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AAD2C5D7D55003D9543 /* LocationDetailViewModel.swift */; };
 		19F94C052C58ABA400599F54 /* SwiftGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */; };
 		19F94C092C58ABA500599F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C082C58ABA500599F54 /* Assets.xcassets */; };
 		19F94C0C2C58ABA500599F54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C0B2C58ABA500599F54 /* Preview Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		19935AA52C5C6BAB003D9543 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		19935AA82C5C8D89003D9543 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		19935AAA2C5CD94B003D9543 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		19935AAD2C5D7D55003D9543 /* LocationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewModel.swift; sourceTree = "<group>"; };
 		19F94C012C58ABA400599F54 /* SwiftGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGrubApp.swift; sourceTree = "<group>"; };
 		19F94C082C58ABA500599F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,9 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				19935A912C5B42A3003D9543 /* LocationMapView */,
+				19935AAC2C5D7D34003D9543 /* LocationDetailView */,
 				19935AA12C5C52F8003D9543 /* ProfileView */,
 				19F94C142C58ABC500599F54 /* AppTabView.swift */,
-				19935A712C58CC4A003D9543 /* LocationDetailView.swift */,
 				19F94C1B2C58AC3F00599F54 /* LocationListView.swift */,
 				19935A9A2C5C2847003D9543 /* OnboardView.swift */,
 			);
@@ -183,6 +185,15 @@
 				19935AA32C5C549B003D9543 /* PhotoPicker.swift */,
 			);
 			path = "UIKit Components";
+			sourceTree = "<group>";
+		};
+		19935AAC2C5D7D34003D9543 /* LocationDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				19935A712C58CC4A003D9543 /* LocationDetailView.swift */,
+				19935AAD2C5D7D55003D9543 /* LocationDetailViewModel.swift */,
+			);
+			path = LocationDetailView;
 			sourceTree = "<group>";
 		};
 		19F94BF82C58ABA400599F54 = {
@@ -320,6 +331,7 @@
 				19935A8C2C5B1A97003D9543 /* Constants.swift in Sources */,
 				19935A7B2C58EEBA003D9543 /* CustomModifiers.swift in Sources */,
 				19F94C1C2C58AC3F00599F54 /* LocationListView.swift in Sources */,
+				19935AAE2C5D7D55003D9543 /* LocationDetailViewModel.swift in Sources */,
 				19935A932C5B42BC003D9543 /* LocationMapViewModel.swift in Sources */,
 				19F94C212C58AD4700599F54 /* Color+Ext.swift in Sources */,
 				19935AA92C5C8D89003D9543 /* ProfileViewModel.swift in Sources */,
