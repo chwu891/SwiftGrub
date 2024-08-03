@@ -12,6 +12,7 @@ final class CloudKitManager {
     static let shared = CloudKitManager()
     
     var userRecord: CKRecord?
+    var profileRecordID: CKRecord.ID?
     
     func getUserReocrd() {
         CKContainer(identifier: "iCloud.com.chi-apple.DubDubGrub").fetchUserRecordID { recordID, error in
@@ -27,6 +28,10 @@ final class CloudKitManager {
                 }
                 
                 self.userRecord = userRecord
+                
+                if let profileReference = userRecord["userProfile"] as? CKRecord.Reference {
+                    self.profileRecordID = profileReference.recordID
+                }
             }
         }
     }
