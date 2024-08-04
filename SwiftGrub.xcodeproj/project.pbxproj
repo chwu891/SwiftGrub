@@ -35,6 +35,7 @@
 		19935AB32C5F5085003D9543 /* LocationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AB22C5F5085003D9543 /* LocationListViewModel.swift */; };
 		19935AB62C5FEB7B003D9543 /* MapBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AB52C5FEB7B003D9543 /* MapBalloon.swift */; };
 		19935AB82C5FEF54003D9543 /* DDGAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AB72C5FEF54003D9543 /* DDGAnnotation.swift */; };
+		19935ABB2C5FF3B1003D9543 /* AppTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935ABA2C5FF3B1003D9543 /* AppTabViewModel.swift */; };
 		19F94C052C58ABA400599F54 /* SwiftGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */; };
 		19F94C092C58ABA500599F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C082C58ABA500599F54 /* Assets.xcassets */; };
 		19F94C0C2C58ABA500599F54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C0B2C58ABA500599F54 /* Preview Assets.xcassets */; };
@@ -75,6 +76,7 @@
 		19935AB22C5F5085003D9543 /* LocationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewModel.swift; sourceTree = "<group>"; };
 		19935AB52C5FEB7B003D9543 /* MapBalloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBalloon.swift; sourceTree = "<group>"; };
 		19935AB72C5FEF54003D9543 /* DDGAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGAnnotation.swift; sourceTree = "<group>"; };
+		19935ABA2C5FF3B1003D9543 /* AppTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabViewModel.swift; sourceTree = "<group>"; };
 		19F94C012C58ABA400599F54 /* SwiftGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGrubApp.swift; sourceTree = "<group>"; };
 		19F94C082C58ABA500599F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,11 +115,11 @@
 		19935A792C58E702003D9543 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				19935AB92C5FF390003D9543 /* AppTabVIew */,
 				19935A912C5B42A3003D9543 /* LocationMapView */,
 				19935AB12C5F503E003D9543 /* LocationListView */,
 				19935AAC2C5D7D34003D9543 /* LocationDetailView */,
 				19935AA12C5C52F8003D9543 /* ProfileView */,
-				19F94C142C58ABC500599F54 /* AppTabView.swift */,
 				19935A9A2C5C2847003D9543 /* OnboardView.swift */,
 			);
 			path = Screens;
@@ -215,6 +217,15 @@
 				19935AB72C5FEF54003D9543 /* DDGAnnotation.swift */,
 			);
 			path = "Map Annotation";
+			sourceTree = "<group>";
+		};
+		19935AB92C5FF390003D9543 /* AppTabVIew */ = {
+			isa = PBXGroup;
+			children = (
+				19F94C142C58ABC500599F54 /* AppTabView.swift */,
+				19935ABA2C5FF3B1003D9543 /* AppTabViewModel.swift */,
+			);
+			path = AppTabVIew;
 			sourceTree = "<group>";
 		};
 		19F94BF82C58ABA400599F54 = {
@@ -358,6 +369,7 @@
 				19935A872C5B0B7C003D9543 /* MockData.swift in Sources */,
 				19935A722C58CC4A003D9543 /* LocationDetailView.swift in Sources */,
 				19935A852C5B0B5C003D9543 /* DDGProfile.swift in Sources */,
+				19935ABB2C5FF3B1003D9543 /* AppTabViewModel.swift in Sources */,
 				19935A832C5B0827003D9543 /* DDGLocation.swift in Sources */,
 				19935AA42C5C549B003D9543 /* PhotoPicker.swift in Sources */,
 				19F94C1A2C58AC0C00599F54 /* LocationMapView.swift in Sources */,
