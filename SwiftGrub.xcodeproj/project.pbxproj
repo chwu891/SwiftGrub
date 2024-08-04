@@ -32,6 +32,7 @@
 		19935AAB2C5CD94B003D9543 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AAA2C5CD94B003D9543 /* LoadingView.swift */; };
 		19935AAE2C5D7D55003D9543 /* LocationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AAD2C5D7D55003D9543 /* LocationDetailViewModel.swift */; };
 		19935AB02C5D8A1A003D9543 /* ProfileModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AAF2C5D8A1A003D9543 /* ProfileModalView.swift */; };
+		19935AB32C5F5085003D9543 /* LocationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AB22C5F5085003D9543 /* LocationListViewModel.swift */; };
 		19F94C052C58ABA400599F54 /* SwiftGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */; };
 		19F94C092C58ABA500599F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C082C58ABA500599F54 /* Assets.xcassets */; };
 		19F94C0C2C58ABA500599F54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C0B2C58ABA500599F54 /* Preview Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		19935AAA2C5CD94B003D9543 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		19935AAD2C5D7D55003D9543 /* LocationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewModel.swift; sourceTree = "<group>"; };
 		19935AAF2C5D8A1A003D9543 /* ProfileModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModalView.swift; sourceTree = "<group>"; };
+		19935AB22C5F5085003D9543 /* LocationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewModel.swift; sourceTree = "<group>"; };
 		19F94C012C58ABA400599F54 /* SwiftGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGrubApp.swift; sourceTree = "<group>"; };
 		19F94C082C58ABA500599F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,22 +105,14 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		19935A762C58E493003D9543 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				19935A772C58E4A2003D9543 /* LocationCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		19935A792C58E702003D9543 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				19935A912C5B42A3003D9543 /* LocationMapView */,
+				19935AB12C5F503E003D9543 /* LocationListView */,
 				19935AAC2C5D7D34003D9543 /* LocationDetailView */,
 				19935AA12C5C52F8003D9543 /* ProfileView */,
 				19F94C142C58ABC500599F54 /* AppTabView.swift */,
-				19F94C1B2C58AC3F00599F54 /* LocationListView.swift */,
 				19935A9A2C5C2847003D9543 /* OnboardView.swift */,
 			);
 			path = Screens;
@@ -199,6 +193,16 @@
 			path = LocationDetailView;
 			sourceTree = "<group>";
 		};
+		19935AB12C5F503E003D9543 /* LocationListView */ = {
+			isa = PBXGroup;
+			children = (
+				19F94C1B2C58AC3F00599F54 /* LocationListView.swift */,
+				19935AB22C5F5085003D9543 /* LocationListViewModel.swift */,
+				19935A772C58E4A2003D9543 /* LocationCell.swift */,
+			);
+			path = LocationListView;
+			sourceTree = "<group>";
+		};
 		19F94BF82C58ABA400599F54 = {
 			isa = PBXGroup;
 			children = (
@@ -242,7 +246,6 @@
 			children = (
 				19935A7A2C58EEBA003D9543 /* CustomModifiers.swift */,
 				19935A732C58E459003D9543 /* CustomViews */,
-				19935A762C58E493003D9543 /* Cells */,
 				19935A792C58E702003D9543 /* Screens */,
 			);
 			path = Views;
@@ -353,6 +356,7 @@
 				19935A782C58E4A2003D9543 /* LocationCell.swift in Sources */,
 				19935AB02C5D8A1A003D9543 /* ProfileModalView.swift in Sources */,
 				19935A8E2C5B20C8003D9543 /* CKRecord+Ext.swift in Sources */,
+				19935AB32C5F5085003D9543 /* LocationListViewModel.swift in Sources */,
 				19935A962C5BF99A003D9543 /* LocationManager.swift in Sources */,
 				19935A982C5C0137003D9543 /* CKAsset+Ext.swift in Sources */,
 				19935A9B2C5C2847003D9543 /* OnboardView.swift in Sources */,
