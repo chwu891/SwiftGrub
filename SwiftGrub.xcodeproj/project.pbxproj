@@ -37,6 +37,7 @@
 		19935AB82C5FEF54003D9543 /* DDGAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AB72C5FEF54003D9543 /* DDGAnnotation.swift */; };
 		19935ABB2C5FF3B1003D9543 /* AppTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935ABA2C5FF3B1003D9543 /* AppTabViewModel.swift */; };
 		19935ABD2C61756F003D9543 /* ProfileSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935ABC2C61756F003D9543 /* ProfileSheetView.swift */; };
+		19935ABF2C619007003D9543 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935ABE2C619007003D9543 /* HapticManager.swift */; };
 		19F94C052C58ABA400599F54 /* SwiftGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */; };
 		19F94C092C58ABA500599F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C082C58ABA500599F54 /* Assets.xcassets */; };
 		19F94C0C2C58ABA500599F54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C0B2C58ABA500599F54 /* Preview Assets.xcassets */; };
@@ -79,6 +80,7 @@
 		19935AB72C5FEF54003D9543 /* DDGAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGAnnotation.swift; sourceTree = "<group>"; };
 		19935ABA2C5FF3B1003D9543 /* AppTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabViewModel.swift; sourceTree = "<group>"; };
 		19935ABC2C61756F003D9543 /* ProfileSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSheetView.swift; sourceTree = "<group>"; };
+		19935ABE2C619007003D9543 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		19F94C012C58ABA400599F54 /* SwiftGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGrubApp.swift; sourceTree = "<group>"; };
 		19F94C082C58ABA500599F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				19935A892C5B1942003D9543 /* CloudKitManager.swift */,
 				19935A952C5BF99A003D9543 /* LocationManager.swift */,
+				19935ABE2C619007003D9543 /* HapticManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				19935A7B2C58EEBA003D9543 /* CustomModifiers.swift in Sources */,
 				19F94C1C2C58AC3F00599F54 /* LocationListView.swift in Sources */,
 				19935AAE2C5D7D55003D9543 /* LocationDetailViewModel.swift in Sources */,
+				19935ABF2C619007003D9543 /* HapticManager.swift in Sources */,
 				19935A932C5B42BC003D9543 /* LocationMapViewModel.swift in Sources */,
 				19F94C212C58AD4700599F54 /* Color+Ext.swift in Sources */,
 				19935AA92C5C8D89003D9543 /* ProfileViewModel.swift in Sources */,
