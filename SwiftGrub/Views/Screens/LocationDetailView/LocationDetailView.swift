@@ -34,13 +34,14 @@ struct LocationDetailView: View {
                             viewModel.getDirectionsToLocation()
                         } label: {
                             LocationActionButton(color: .brandPrimary, imageName: "location.fill")
-                                .accessibilityLabel(Text("Get directions"))
                         }
+                        .accessibilityLabel(Text("Get directions"))
                         
                         Link(destination: URL(string: viewModel.location.websiteURL)!, label: {
                             LocationActionButton(color: .brandPrimary, imageName: "network")
-                                .accessibilityLabel(Text("Go to website"))
                         })
+                        .accessibilityRemoveTraits(.isButton)
+                        .accessibilityLabel(Text("Go to website"))
                         
                         Button {
                             viewModel.callLocation()
@@ -65,7 +66,7 @@ struct LocationDetailView: View {
                 Text("Who's Here?")
                     .bold()
                     .font(.title2)
-                    .accessibility(addTraits: .isHeader)
+                    .accessibilityAddTraits(.isHeader)
                     .accessibilityLabel(Text("Who's Here? \(viewModel.checkedInProfiles.count) checked in"))
                     .accessibilityHint(Text("Bottom section is scrollable"))
                 
@@ -82,6 +83,8 @@ struct LocationDetailView: View {
                                 ForEach(viewModel.checkedInProfiles) { profile in
                                     FirstNameAvatarView(profile: profile)
                                         .accessibilityElement(children: .ignore)
+                                        .accessibilityAddTraits(.isButton)
+                                        .accessibilityHint(Text("Show's \(profile.firstName) profile pop up."))
                                         .accessibilityLabel(Text("\(profile.firstName) \(profile.lastName)"))
                                         .onTapGesture {
                                             viewModel.selectedProfile = profile
@@ -96,6 +99,7 @@ struct LocationDetailView: View {
                 
                 Spacer()
             }
+            .accessibilityHidden(viewModel.isShowingProfileModal)
             
             if viewModel.isShowingProfileModal {
                 Color(.systemBackground)
@@ -103,6 +107,7 @@ struct LocationDetailView: View {
                     .opacity(0.9)
                     .transition(AnyTransition.opacity.animation(.easeOut(duration: 0.35)))
                     .zIndex(1)
+                    .accessibilityHidden(true)
                 
                 ProfileModalView(isShowingProfileModal: $viewModel.isShowingProfileModal,
                                  profile: viewModel.selectedProfile!)
