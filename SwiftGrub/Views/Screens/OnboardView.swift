@@ -9,14 +9,14 @@ import SwiftUI
 
 struct OnboardView: View {
     
-    @Binding var isShowingOnboardView: Bool
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
             HStack {
                 Spacer()
                 Button {
-                    isShowingOnboardView = false
+                    presentationMode.wrappedValue.dismiss()
                 } label: {
                     XDismissButton()
                 }
@@ -49,10 +49,10 @@ struct OnboardView: View {
 }
 
 #Preview {
-    OnboardView(isShowingOnboardView: .constant(true))
+    OnboardView()
 }
 
-struct OnboardInfoView: View {
+fileprivate struct OnboardInfoView: View {
     
     var imageName: String
     var title: String

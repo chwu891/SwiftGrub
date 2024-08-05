@@ -54,7 +54,7 @@ struct LocationCell: View {
     LocationCell(location: DDGLocation(record: MockData.location), profiles: [])
 }
 
-struct AdditionalProfilesView: View {
+fileprivate struct AdditionalProfilesView: View {
     
     var number: Int
     
