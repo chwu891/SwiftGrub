@@ -15,36 +15,21 @@ struct ProfileView: View {
     var body: some View {
         ZStack {
             VStack {
-                ZStack {
-                    NameBackgroundView()
+                HStack(spacing: 16) {
+                    ProfileImageView(image: viewModel.avatar)
+                        .onTapGesture { viewModel.isShowingPhotoPicker = true }
                     
-                    HStack(spacing: 16) {
-                        ZStack {
-                            AvatarView(image: viewModel.avatar, size: 84)
-                            EditImage()
-                        }
-                        .accessibilityElement(children: .ignore)
-                        .accessibilityAddTraits(.isButton)
-                        .accessibilityLabel(Text("Profile Photo"))
-                        .accessibilityHint(Text("Opens the iPhone's photo picker"))
-                        .padding(.leading, 12)
-                        .onTapGesture {
-                            viewModel.isShowingPhotoPicker = true
-                        }
-                        
-                        VStack(spacing: 1) {
-                            TextField("First Name", text: $viewModel.firstName)
-                                .profileNameStyle()
-                            
-                            TextField("Last Name", text: $viewModel.lastName)
-                                .profileNameStyle()
-                            
-                            TextField("Company Name", text: $viewModel.companyName)
-                        }
-                        .padding(.trailing, 16)
+                    VStack(spacing: 1) {
+                        TextField("First Name", text: $viewModel.firstName).profileNameStyle()
+                        TextField("Last Name", text: $viewModel.lastName).profileNameStyle()
+                        TextField("Company Name", text: $viewModel.companyName)
                     }
-                    .padding()
+                    .padding(.trailing, 16)
                 }
+                .padding(.vertical)
+                .background(Color(.secondarySystemBackground))
+                .cornerRadius(12)
+                .padding(.horizontal)
                 
                 VStack(alignment: .leading, spacing: 8) {
                     HStack {
@@ -55,39 +40,28 @@ struct ProfileView: View {
                         if viewModel.isCheckedIn {
                             Button {
                                 viewModel.checkOut()
-                                HapticManager.playSuccess()
                             } label: {
-                                Label("Check Out", systemImage: "mappin.and.ellipse")
-                                    .font(.system(size: 12, weight: .semibold))
-                                    .foregroundColor(.white)
-                                    .padding(10)
-                                    .frame(height: 28)
-                                    .background(Color.theme.grubRed)
-                                    .cornerRadius(8)
+                                CheckOutButton()
                             }
-                            .accessibilityLabel(Text("Check out of current location"))
+                            .disabled(viewModel.isLoading)
                         }
                     }
                     
-                    TextEditor(text: $viewModel.bio)
-                        .frame(height: 100)
-                        .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.secondary, lineWidth: 1))
-                        .accessibilityHint(Text("This TextField is for your bio and has a 100 character maximum."))
+                    BioTextEditor(text: $viewModel.bio)
                 }
                 .padding(.horizontal, 20)
                 
                 Spacer()
                 
                 Button {
-                    viewModel.profileContext == .create ? viewModel.createProfile() : viewModel.updateProfile()
+                    viewModel.determineButtonAction()
                 } label: {
-                    DDGButton(title: viewModel.profileContext == .create ? "Create Profile" : "Update Profile")
+                    DDGButton(title: viewModel.buttonTitle)
                 }
                 .padding(.bottom)
             }
-            if viewModel.isLoading {
-                LoadingView()
-            }
+            
+            if viewModel.isLoading { LoadingView() }
         }
         .navigationTitle("Profile")
         .navigationBarTitleDisplayMode(DeviceTypes.isiPhone8Standard ? .inline : .automatic)
@@ -102,14 +76,11 @@ struct ProfileView: View {
             viewModel.getProfile()
             viewModel.getCheckedInStatus()
         }
-        .alert(item: $viewModel.alertItem, content: { alertItem in
-            Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
-        })
-        .sheet(isPresented: $viewModel.isShowingPhotoPicker) {
-            PhotoPicker(image: $viewModel.avatar)
-        }
+        .alert(item: $viewModel.alertItem, content: { $0.alert })
+        .sheet(isPresented: $viewModel.isShowingPhotoPicker) { PhotoPicker(image: $viewModel.avatar) }
     }
 }
+
 
 #Preview {
     NavigationView {
@@ -117,7 +88,7 @@ struct ProfileView: View {
     }
 }
 
-struct NameBackgroundView: View {
+fileprivate struct NameBackgroundView: View {
     var body: some View {
         Color(.secondarySystemBackground)
             .frame(height: 130)
@@ -126,18 +97,32 @@ struct NameBackgroundView: View {
     }
 }
 
-struct EditImage: View {
+
+fileprivate struct ProfileImageView: View {
+    
+    var image: UIImage
+    
     var body: some View {
-        Image(systemName: "square.and.pencil")
-            .resizable()
-            .scaledToFit()
-            .frame(width: 14, height: 14)
-            .foregroundColor(.white)
-            .offset(y: 30)
+        ZStack {
+            AvatarView(image: image, size: 84)
+            
+            Image(systemName: "square.and.pencil")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 14, height: 14)
+                .foregroundColor(.white)
+                .offset(y: 30)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityAddTraits(.isButton)
+        .accessibilityLabel(Text("Profile Photo"))
+        .accessibilityHint(Text("Opens the iPhone's photo picker"))
+        .padding(.leading, 12)
     }
 }
 
-struct CharactersRemainView: View {
+
+fileprivate struct CharactersRemainView: View {
     
     var currentCount: Int
     
@@ -145,14 +130,40 @@ struct CharactersRemainView: View {
         Text("Bio: ")
             .font(.callout)
             .foregroundColor(.secondary)
-        +
-        Text("\(100 - currentCount)")
+            +
+            Text("\(100 - currentCount)")
             .bold()
             .font(.callout)
-            .foregroundColor(currentCount <= 100 ? Color.theme.brandPrimary : Color(.systemPink))
-        +
-        Text(" Characters Remain")
+            .foregroundColor(currentCount <= 100 ? .brandPrimary : Color(.systemPink))
+            +
+            Text(" Characters Remain")
             .font(.callout)
             .foregroundColor(.secondary)
+    }
+}
+
+struct CheckOutButton: View {
+    
+    var body: some View {
+        Label("Check Out", systemImage: "mappin.and.ellipse")
+            .font(.system(size: 12, weight: .semibold))
+            .foregroundColor(.white)
+            .padding(10)
+            .frame(height: 28)
+            .background(Color.theme.grubRed)
+            .cornerRadius(8)
+            .accessibilityLabel(Text("Check out of current location"))
+    }
+}
+
+struct BioTextEditor: View {
+    
+    var text: Binding<String>
+    
+    var body: some View {
+        TextEditor(text: text)
+            .frame(height: 100)
+            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.secondary, lineWidth: 1))
+            .accessibilityHint(Text("This TextField is for your bio and has a 100 character maximum."))
     }
 }
