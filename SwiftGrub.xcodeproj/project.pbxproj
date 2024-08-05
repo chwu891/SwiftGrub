@@ -36,6 +36,7 @@
 		19935AB62C5FEB7B003D9543 /* MapBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AB52C5FEB7B003D9543 /* MapBalloon.swift */; };
 		19935AB82C5FEF54003D9543 /* DDGAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935AB72C5FEF54003D9543 /* DDGAnnotation.swift */; };
 		19935ABB2C5FF3B1003D9543 /* AppTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935ABA2C5FF3B1003D9543 /* AppTabViewModel.swift */; };
+		19935ABD2C61756F003D9543 /* ProfileSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19935ABC2C61756F003D9543 /* ProfileSheetView.swift */; };
 		19F94C052C58ABA400599F54 /* SwiftGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */; };
 		19F94C092C58ABA500599F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C082C58ABA500599F54 /* Assets.xcassets */; };
 		19F94C0C2C58ABA500599F54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F94C0B2C58ABA500599F54 /* Preview Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		19935AB52C5FEB7B003D9543 /* MapBalloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBalloon.swift; sourceTree = "<group>"; };
 		19935AB72C5FEF54003D9543 /* DDGAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGAnnotation.swift; sourceTree = "<group>"; };
 		19935ABA2C5FF3B1003D9543 /* AppTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabViewModel.swift; sourceTree = "<group>"; };
+		19935ABC2C61756F003D9543 /* ProfileSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSheetView.swift; sourceTree = "<group>"; };
 		19F94C012C58ABA400599F54 /* SwiftGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F94C042C58ABA400599F54 /* SwiftGrubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGrubApp.swift; sourceTree = "<group>"; };
 		19F94C082C58ABA500599F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				19935A712C58CC4A003D9543 /* LocationDetailView.swift */,
 				19935AAD2C5D7D55003D9543 /* LocationDetailViewModel.swift */,
 				19935AAF2C5D8A1A003D9543 /* ProfileModalView.swift */,
+				19935ABC2C61756F003D9543 /* ProfileSheetView.swift */,
 			);
 			path = LocationDetailView;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				19935A982C5C0137003D9543 /* CKAsset+Ext.swift in Sources */,
 				19935A9B2C5C2847003D9543 /* OnboardView.swift in Sources */,
 				19935AB62C5FEB7B003D9543 /* MapBalloon.swift in Sources */,
+				19935ABD2C61756F003D9543 /* ProfileSheetView.swift in Sources */,
 				19935A7F2C58F0BB003D9543 /* DDGButton.swift in Sources */,
 				19935AAB2C5CD94B003D9543 /* LoadingView.swift in Sources */,
 				19935AA62C5C6BAB003D9543 /* UIImage+Ext.swift in Sources */,

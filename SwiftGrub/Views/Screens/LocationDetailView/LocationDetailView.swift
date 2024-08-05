@@ -10,6 +10,7 @@ import SwiftUI
 struct LocationDetailView: View {
     
     @ObservedObject var viewModel: LocationDetailViewModel
+    @Environment(\.sizeCategory) var sizeCategory
     
     var body: some View {
         ZStack {
@@ -79,7 +80,7 @@ struct LocationDetailView: View {
                             .padding(.top, 30)
                     } else {
                         ScrollView {
-                            LazyVGrid(columns: viewModel.columns, content: {
+                            LazyVGrid(columns: viewModel.determineColumns(for: sizeCategory), content: {
                                 ForEach(viewModel.checkedInProfiles) { profile in
                                     FirstNameAvatarView(profile: profile)
                                         .accessibilityElement(children: .ignore)
@@ -87,7 +88,7 @@ struct LocationDetailView: View {
                                         .accessibilityHint(Text("Show's \(profile.firstName) profile pop up."))
                                         .accessibilityLabel(Text("\(profile.firstName) \(profile.lastName)"))
                                         .onTapGesture {
-                                            viewModel.selectedProfile = profile
+                                            viewModel.show(profile: profile, in: sizeCategory)
                                         }
                                 }
                             })
@@ -102,7 +103,7 @@ struct LocationDetailView: View {
             .accessibilityHidden(viewModel.isShowingProfileModal)
             
             if viewModel.isShowingProfileModal {
-                Color(.systemBackground)
+                Color(.black)
                     .ignoresSafeArea()
                     .opacity(0.9)
                     .transition(AnyTransition.opacity.animation(.easeOut(duration: 0.35)))
@@ -120,6 +121,14 @@ struct LocationDetailView: View {
             viewModel.getCheckedInProfiles()
             viewModel.getCheckedInStatus()
         }
+        .sheet(isPresented: $viewModel.isShowingProfileSheet) {
+            NavigationView {
+                ProfileSheetView(profile: viewModel.selectedProfile!)
+                    .toolbar { Button("Dismiss", action: { viewModel.isShowingProfileSheet = false }) }
+            }
+            .accentColor(Color.theme.brandPrimary)
+            
+        }
         .alert(item: $viewModel.alertItem, content: { alertItem in
             Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
         })
@@ -130,7 +139,7 @@ struct LocationDetailView: View {
 
 #Preview {
     NavigationView {
-        LocationDetailView(viewModel: LocationDetailViewModel(location: DDGLocation(record: MockData.location)))
+        LocationDetailView(viewModel: LocationDetailViewModel(location: DDGLocation(record: MockData.chipotle)))
     }
 }
 
@@ -156,11 +165,13 @@ struct LocationActionButton: View {
 
 struct FirstNameAvatarView: View {
     
+    @Environment(\.sizeCategory) var sizeCategory
     var profile: DDGProfile
     
     var body: some View {
         VStack {
-            AvatarView(image: profile.createAvatarImage(), size: 64)
+            AvatarView(image: profile.createAvatarImage(),
+                       size:  sizeCategory >= .accessibilityMedium ? 100 : 64)
             
             Text(profile.firstName)
                 .bold()
@@ -200,9 +211,8 @@ struct DescriptionView: View {
     
     var body: some View {
         Text(text)
-            .lineLimit(3)
             .minimumScaleFactor(0.75)
-            .frame(height: 70)
+            .fixedSize(horizontal: false, vertical: true)
             .padding(.horizontal)
     }
 }
