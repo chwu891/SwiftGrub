@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LocationDetailView: View {
     
-    @ObservedObject var viewModel: LocationDetailViewModel
+    @Bindable var viewModel: LocationDetailViewModel
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
     
     var body: some View {
@@ -100,7 +100,7 @@ fileprivate struct DescriptionView: View {
 
 fileprivate struct ActionButtonHStack: View {
     
-    @ObservedObject var viewModel: LocationDetailView.LocationDetailViewModel
+    var viewModel: LocationDetailView.LocationDetailViewModel
     
     var body: some View {
         HStack(spacing: 20) {
@@ -184,7 +184,7 @@ fileprivate struct GridHeaderTextView: View {
 fileprivate struct AvatarGridView: View {
     
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
-    @ObservedObject var viewModel: LocationDetailView.LocationDetailViewModel
+    var viewModel: LocationDetailView.LocationDetailViewModel
     
     var body: some View {
         ZStack {
