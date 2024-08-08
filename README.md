@@ -4,12 +4,11 @@ This is a social dining app that lets users check in or out of restaurants, see 
 
 ## Description
 
-This project was developed based on [Sean Allen's iOS development course "Dub Dub Grub"](https://seanallen.teachable.com/p/dub-dub-grub-swiftui-mapkit-cloudkit). This project demonstrates modern iOS development practices using SwiftUI, CloudKit, and other advanced features. It focuses on providing a seamless user experience with real-time restaurant check-ins, detailed location data, and interactive map functionalities.
+This project was developed based on [Sean Allen's iOS development course "Dub Dub Grub"](https://seanallen.teachable.com/p/dub-dub-grub-swiftui-mapkit-cloudkit). This project demonstrates modern iOS development practices using SwiftUI, CloudKit, MapKit, and other advanced features. It focuses on providing a seamless user experience with real-time restaurant check-ins, detailed location data, and interactive map functionalities.
 
 The project has been updated to be compatible with the latest development tools and operating systems:
 - **Xcode 15.4**
 - **iOS 17.5**
-- **iPadOS 17.5**
 
 ## Learning Objectives
 
